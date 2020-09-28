@@ -1,0 +1,19 @@
+<button mat-raised-button color="accent" (click)="home()">HOME</button>
+<mat-card>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Your Name</mat-label>
+            <input matInput placeholder="Ex. Vinay"  [(ngModel)]="name" name="name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Your Password</mat-label>
+            <input matInput placeholder="Ex.****" type="password" [(ngModel)]="password" name="password">
+        </mat-form-field>
+        <p *ngIf="error">Invalid credentials</p>
+        <button mat-raised-button color="primary" [disabled]="!name || !password" (click)="login()">login</button>
+        <button mat-button color="warn" class="forgot" (click)="forgot()">Forgot password?</button>
+    </form> 
+</mat-card>
+
+
+

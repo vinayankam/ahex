@@ -1,0 +1,13 @@
+
+<mat-card>
+    <h1>WELCOME</h1>
+    <button mat-raised-button color="primary" (click)="signup()">SIGNUP</button>
+    <button mat-raised-button color="accent" class="button" (click)="login()">LOGIN</button>
+    <button mat-raised-button color="accent" class="authButton" (click)="authf()">AUTH</button>
+    <button mat-raised-button color="primary" (click)="authLogout()">authLogout</button>
+    <ul *ngIf="auth.user$ | async as user">
+        <h1 class="h1">User Name</h1>
+        <li>{{ user.name }}</li>
+        <li>{{ user.email }}</li>
+      </ul>
+</mat-card>

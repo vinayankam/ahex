@@ -1,0 +1,27 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+  
+.example-full-width {
+  width: 100%;
+}
+
+.select {
+  margin-top: 18px;
+}
+
+mat-card {
+  width: 654px;
+  margin: auto;
+  position: relative;
+  height: 338px;
+  margin-top: 22PX;
+  top: 63px;
+}
+
+mat-radio-button {
+  margin-left: 22px;
+}
