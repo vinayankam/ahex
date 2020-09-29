@@ -16,13 +16,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 //import { AuthModule } from '@auth0/auth0-angular/lib/auth.module';
 import { AuthModule } from '@auth0/auth0-angular';
 import { AuthComponent } from './auth/auth.component';
+import { FormsComponent } from './forms/forms.component';
 
 
 const myroutes: Routes = [
@@ -33,6 +34,7 @@ const myroutes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'loginSucess',component:LoginSucessComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
+  {path:'forms',component:FormsComponent},
 
 ]
 @NgModule({
@@ -43,7 +45,9 @@ const myroutes: Routes = [
     LoginComponent,
     LoginSucessComponent,
     ForgotPasswordComponent,
-    AuthComponent
+    AuthComponent,
+    FormsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -64,6 +68,7 @@ const myroutes: Routes = [
       domain: 'dev-7l6sprbd.us.auth0.com',
       clientId: 'tEJ2McEd9i2t2TxYAXhNpvYdrClrExK2'
     }),
+    ReactiveFormsModule,
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
