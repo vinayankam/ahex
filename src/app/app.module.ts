@@ -24,7 +24,13 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AuthModule } from '@auth0/auth0-angular';
 import { AuthComponent } from './auth/auth.component';
 import { FormsComponent } from './forms/forms.component';
-
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+import * as moment from 'moment';
 
 const myroutes: Routes = [
   // {path:'',component:AuthComponent},
@@ -35,6 +41,8 @@ const myroutes: Routes = [
   {path:'loginSucess',component:LoginSucessComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
   {path:'forms',component:FormsComponent},
+  {path:'datePicker',component:DatepickerComponent},
+
 
 ]
 @NgModule({
@@ -47,6 +55,7 @@ const myroutes: Routes = [
     ForgotPasswordComponent,
     AuthComponent,
     FormsComponent,
+    DatepickerComponent,
     
   ],
   imports: [
@@ -69,6 +78,11 @@ const myroutes: Routes = [
       clientId: 'tEJ2McEd9i2t2TxYAXhNpvYdrClrExK2'
     }),
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgbModule,
+    BsDatepickerModule.forRoot(),
+    NgxDaterangepickerMd.forRoot(),
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}

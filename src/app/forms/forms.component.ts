@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { tsFormModel } from '../forms/tdFormModel';
 
 interface country {
   value: string;
@@ -12,27 +13,35 @@ interface country {
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    number: new FormControl(''),
-    email: new FormControl(''),
-    gender: new FormControl(''),
-    country: new FormControl(''),
-    description: new FormControl(''),
-    check: new FormControl(''),
+  profileForm = this.fb.group({
+    firstName: ['',Validators.required],
+    number: ['',Validators.required],
+    email: ['',Validators.required],
+    gender:['',Validators.required],
+    country: ['',Validators.required],
+    description: ['',Validators.required],
+    check: ['',Validators.required],
   });
   countryArray: country[] = [
     {value: 'India', viewValue: 'India'},
     {value: 'USA', viewValue: 'USA'},
     {value: 'UAE', viewValue: 'UAE'}
   ];
-  constructor() { }
+  tdCountryArray = ['india', 'USA',
+  'UAE'];
+  model = new tsFormModel('vinay',1233344444, 'vinay55@gmail.com','male',this.tdCountryArray[1],'hii', true);
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     
   }
   signup() {
     console.log(this.profileForm.value);
+  }
+
+  tdSignup() {
+    console.log({name:this.model.tdName,number:this.model.tdNumber,email:this.model.tdEmail,gender:this.model.tdGender,country:this.model.tdSelectedValue,description:this.model.tdDescription,checked:this.model.tdCheck})
   }
 
 }

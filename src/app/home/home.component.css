@@ -5,6 +5,7 @@ mat-card {
     height: 319px;
     margin-top: 22PX;
     top: 169px;
+    height: auto;
 }
 
 button {

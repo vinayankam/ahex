@@ -1,0 +1,43 @@
+<mat-card>
+    <h1> Angular material datepicker</h1>
+    <mat-form-field color="accent" appearance="fill">
+        <mat-label>Inherited calendar color</mat-label>
+        <input matInput [matDatepicker]="picker1" [min]="minDate">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <h3>Rangedatepicker</h3>
+    <div>
+        <input type="text" ngxDaterangepickerMd [(ngModel)]="selected" class="form-control "/>
+    </div>
+</mat-card>
+<mat-card>
+    <h1>Bootstrap datepicker</h1>
+    <div class="form-group">
+        <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+            name="datepicker" [(ngModel)]="datepicker" type="text" bsDatepicker [min]="minDate">
+        </div>
+    </div> 
+    <h3>Rangedatepicker</h3>
+    <div class="form-group">
+        <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+            name="datepicker" [(ngModel)]="datepicker" type="text" bsDaterangepicker>
+        </div>
+    </div>            
+</mat-card>
+
+<mat-card>
+    <mat-form-field color="accent" appearance="fill">
+        <mat-label>Inherited calendar color</mat-label>
+        <input matInput [matDatepicker]="picker1" [min]="minDate">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <div>
+
+    </div>
+</mat-card>
+
+    

@@ -33,4 +33,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['forms'])
 
   }
+  datePicker() {
+    this.router.navigate(['datePicker'])
+
+  }
 }

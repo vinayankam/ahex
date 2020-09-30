@@ -1,0 +1,17 @@
+mat-form-field {
+    margin-right: 12px;
+}
+
+mat-card {
+    width: 464px;
+    margin: auto;
+    position: relative;
+    height: 319px;
+    margin-top: 22PX;
+    top: 42px;
+    height: auto;
+}
+
+.ngxDaterangepickerMd {
+    width: max-content;
+}

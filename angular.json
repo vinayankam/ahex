@@ -25,7 +25,10 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css"
+            
             ],
             "scripts": []
           },
@@ -127,4 +130,5 @@
   "cli": {
     "analytics": "aac32785-566a-453d-8455-5ebbb2694bec"
   }
+  
 }
