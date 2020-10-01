@@ -29,14 +29,22 @@
 </mat-card>
 
 <mat-card>
+    <h1>Format date</h1>
     <mat-form-field color="accent" appearance="fill">
         <mat-label>Inherited calendar color</mat-label>
-        <input matInput [matDatepicker]="picker1" [min]="minDate">
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-        <mat-datepicker #picker1></mat-datepicker>
+        <input matInput [matDatepicker]="formatepicker"  [(ngModel)]="date" name="date">
+        <mat-datepicker-toggle matSuffix [for]="formatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #formatepicker></mat-datepicker>
     </mat-form-field>
     <div>
-
+        <mat-form-field appearance="fill"  class="example-full-width select">
+            <mat-label>Formate</mat-label>
+            <mat-select required [(ngModel)]="dateFormate" name="dateFormate" (selectionChange)="formate(dateFormate)">
+            <mat-option *ngFor="let x of formateList" [value]="x.value">
+                {{x.viewValue}}
+            </mat-option>
+            </mat-select>
+        </mat-form-field> 
     </div>
 </mat-card>
 

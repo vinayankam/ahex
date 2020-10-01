@@ -1,0 +1,10 @@
+mat-action-list {
+    width: 183px;
+    height: auto;
+    border-right: 2px solid lightblue;
+}
+
+.rooter {
+    width: auto;
+    margin: auto;
+}

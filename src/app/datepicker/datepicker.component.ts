@@ -1,5 +1,9 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-
+interface list {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-datepicker',
   templateUrl: './datepicker.component.html',
@@ -10,18 +14,25 @@ export class DatepickerComponent implements OnInit {
   datepicker;
   model:any;
   selected;
+  date:any;
+  formateList: list[] = [
+    {value: 'CST', viewValue: 'CST'},
+    {value: 'MST', viewValue: 'MST'},
+    {value: 'PST', viewValue: 'PST'},
+    {value: 'IST', viewValue: 'IST'}
+
+  ];
+  dateFormate:any;
   constructor() { 
-    // const currentYear = new Date().getFullYear();
     this.minDate = new Date();
   }
 
-  
-
   ngOnInit(): void {
-  console.log(this.minDate);
-   
-
-    console.log(this.model)
   }
+
+  formate(a) {
+  let p = new DatePipe('en-Us').transform(this.date, 'EEE MMM d y hh:mm:ss', a);
+  this.date = new Date(p);
+}
 
 }

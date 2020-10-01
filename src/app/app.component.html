@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<div style="display: flex;">
+<div>
+    <mat-action-list>
+        <button mat-list-item  (click)="forms()">Forms</button>
+        <button mat-list-item   (click)="datePicker()">Datepicker</button>
+        <button mat-list-item   (click)="dataTransfer()">Data transfer</button>
+
+      </mat-action-list>
+</div>
+<div class="rooter">
+    <router-outlet></router-outlet>
+</div>
+</div>

@@ -31,6 +31,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import * as moment from 'moment';
+import {MatListModule} from '@angular/material/list';
+import { DataTransferComponent } from './data-transfer/data-transfer.component';
+import { ChildDataComponent } from './data-transfer/child-data/child-data.component';
 
 const myroutes: Routes = [
   // {path:'',component:AuthComponent},
@@ -42,6 +45,7 @@ const myroutes: Routes = [
   {path:'forgotPassword',component:ForgotPasswordComponent},
   {path:'forms',component:FormsComponent},
   {path:'datePicker',component:DatepickerComponent},
+  {path:'dataTransfer',component:DataTransferComponent},
 
 
 ]
@@ -56,6 +60,9 @@ const myroutes: Routes = [
     AuthComponent,
     FormsComponent,
     DatepickerComponent,
+    DataTransferComponent,
+    ChildDataComponent,
+    
     
   ],
   imports: [
@@ -83,6 +90,7 @@ const myroutes: Routes = [
     NgbModule,
     BsDatepickerModule.forRoot(),
     NgxDaterangepickerMd.forRoot(),
+    MatListModule,
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
