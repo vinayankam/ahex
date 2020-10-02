@@ -34,6 +34,11 @@ import * as moment from 'moment';
 import {MatListModule} from '@angular/material/list';
 import { DataTransferComponent } from './data-transfer/data-transfer.component';
 import { ChildDataComponent } from './data-transfer/child-data/child-data.component';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
+// import {MatSort} from '@angular/material';
 
 const myroutes: Routes = [
   // {path:'',component:AuthComponent},
@@ -91,6 +96,10 @@ const myroutes: Routes = [
     BsDatepickerModule.forRoot(),
     NgxDaterangepickerMd.forRoot(),
     MatListModule,
+    MatSortModule,
+    MatPaginatorModule,
+    
+    // MatSort
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
