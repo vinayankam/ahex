@@ -27,4 +27,13 @@ export class AppComponent {
     this.router.navigate(['dataTransfer']);
 
   }
+  directive() {
+    this.router.navigate(['directives']);
+
+  }
+
+  uploader() {
+    this.router.navigate(['uploader']);
+
+  }
 }

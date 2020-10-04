@@ -9,6 +9,8 @@ export class dataTransferservice {
 
   constructor() { }
     private data = new BehaviorSubject<any>('');
+    private password : any;
+    public correct : boolean;
 
     setData(a) {
         this.data.next(a);
@@ -17,8 +19,11 @@ export class dataTransferservice {
     getData() {
         return this.data.asObservable();
     }
-
-    ngOnInit(): void {
+    setPassword(a) {
+      this.password = a;
+    }
+    getPassword(){
+      return this.password;
     }
 
 }

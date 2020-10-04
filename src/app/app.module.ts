@@ -36,9 +36,12 @@ import { DataTransferComponent } from './data-transfer/data-transfer.component';
 import { ChildDataComponent } from './data-transfer/child-data/child-data.component';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { DirectivesComponent } from './directives/directives.component';
+import { passwordDirective } from './directive/passwordDirective';
+import { UploadersComponent } from './uploaders/uploaders.component';
+// import { ImageUploaderModule } from 'ngx-image-uploader';
 
 
-// import {MatSort} from '@angular/material';
 
 const myroutes: Routes = [
   // {path:'',component:AuthComponent},
@@ -51,6 +54,9 @@ const myroutes: Routes = [
   {path:'forms',component:FormsComponent},
   {path:'datePicker',component:DatepickerComponent},
   {path:'dataTransfer',component:DataTransferComponent},
+  {path:'directives',component:DirectivesComponent},
+  {path:'uploader',component:UploadersComponent},
+
 
 
 ]
@@ -67,7 +73,9 @@ const myroutes: Routes = [
     DatepickerComponent,
     DataTransferComponent,
     ChildDataComponent,
-    
+    DirectivesComponent,
+    passwordDirective,
+    UploadersComponent
     
   ],
   imports: [
@@ -98,8 +106,7 @@ const myroutes: Routes = [
     MatListModule,
     MatSortModule,
     MatPaginatorModule,
-    
-    // MatSort
+    // ImageUploaderModule,
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}

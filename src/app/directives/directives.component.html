@@ -1,0 +1,14 @@
+<mat-card>
+    <form class="example-form" autocomplete="off" >
+        <mat-form-field class="example-full-width">
+        <mat-label>password</mat-label>
+        <input matInput placeholder="Ex. Vinay" [(ngModel)]="password" name="password" (input)="setGivenPassword(password)">
+        </mat-form-field>
+       <mat-form-field class="example-full-width">
+        <mat-label>Comform password</mat-label>
+        <input matInput placeholder="Ex. Vinay" [(ngModel)]="conform" name="conform" passwordDirective>
+        </mat-form-field>
+        <p style="color: red;" *ngIf="ValidatePassword() == true && password && conform">Password not matched</p>
+        <button mat-raised-button color="primary" [disabled]="ValidatePassword()" (click)='submit()'>SUBMIT</button>
+    </form> 
+</mat-card>
