@@ -29,12 +29,5 @@ export class HomeComponent implements OnInit {
   authLogout() {
     this.auth.logout({ returnTo: document.location.origin })
   }
-  forms() {
-    this.router.navigate(['forms'])
 
-  }
-  datePicker() {
-    this.router.navigate(['datePicker'])
-
-  }
 }

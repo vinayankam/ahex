@@ -1,0 +1,28 @@
+.file-uploader {
+    margin: auto;
+    margin-top: 37px;
+    margin-bottom: 38px; 
+}
+
+.img-div {
+    width: 438px;
+    height: 2oopx;
+    height: 351px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+img {
+    position: absolute;
+    width: 435px;
+}
+
+mat-card {
+    height: auto;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+}

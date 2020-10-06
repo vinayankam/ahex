@@ -40,7 +40,7 @@ parentData:any = [{name:'vinay',gender:'male',country:'india'},
   }
   submit() {
     this.parentData.push({name:this.name,gender:this.gender,country:this.selectedValue});
-    this.service.setData(this.parentData)
+    this.service.setData(this.parentData);
   }
 
 }

@@ -1,2 +1,34 @@
-<p>uploaders works!</p>
-<!-- <ngx-image-uploader [options]="options" (upload)="onUpload($event)"></ngx-image-uploader> -->
+<div *ngIf="activateState == 'img'">
+    <mat-card style="height: auto;">
+        <h1>Image uploader with max size 3mb</h1>
+        <div class="form-group file-uploader">  
+            <label for="file">Upload Image</label>
+            <input type="file" id="file" (change)="handleFileInput($event.target.files)" class="file">    
+        </div>
+        <h2>Display image</h2>
+        <div class="img-div ">
+            <img id='output' src=''>
+        </div>
+    </mat-card>
+</div>
+<br>
+<div *ngIf="activateState == 'pdf'">
+    <mat-card>
+        <h1>PDF uploader with max size 5mb</h1>
+        <div class="form-group file-uploader">  
+            <label for="file">Upload Image</label>
+            <input type="file" id="file" (change)="pdfFileInput($event.target.files)" class="file">    
+        </div>
+        <h2>Display image</h2>
+        <div class="img-div">
+            <img id='pdfFile' src=''>
+        </div>
+    </mat-card>
+</div>
+
+
+<!-- <span class="hidden-file">
+    <input type="file" #fileInput ng2FileSelect [uploader]="uploader" (onFileSelected)="onFileSelected($event)" />
+</span>
+
+<img id='output' src='{{pic}}'>        -->

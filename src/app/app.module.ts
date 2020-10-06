@@ -39,6 +39,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { DirectivesComponent } from './directives/directives.component';
 import { passwordDirective } from './directive/passwordDirective';
 import { UploadersComponent } from './uploaders/uploaders.component';
+import { FileUploadModule } from 'ng2-file-upload';
 // import { ImageUploaderModule } from 'ngx-image-uploader';
 
 
@@ -46,7 +47,7 @@ import { UploadersComponent } from './uploaders/uploaders.component';
 const myroutes: Routes = [
   // {path:'',component:AuthComponent},
 
-  {path:'',component:HomeComponent},
+  {path:'home',component:HomeComponent},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'loginSucess',component:LoginSucessComponent},
@@ -55,7 +56,8 @@ const myroutes: Routes = [
   {path:'datePicker',component:DatepickerComponent},
   {path:'dataTransfer',component:DataTransferComponent},
   {path:'directives',component:DirectivesComponent},
-  {path:'uploader',component:UploadersComponent},
+  {path:'uploader/pdf',component:UploadersComponent},
+  {path:'uploader/img',component:UploadersComponent},
 
 
 
@@ -107,6 +109,7 @@ const myroutes: Routes = [
     MatSortModule,
     MatPaginatorModule,
     // ImageUploaderModule,
+    FileUploadModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}

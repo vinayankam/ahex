@@ -32,8 +32,16 @@ export class AppComponent {
 
   }
 
-  uploader() {
-    this.router.navigate(['uploader']);
+  uploader(from) {
+    if(from == 'img'){
+      this.router.navigate(['uploader/img']);
+    }else{
+      this.router.navigate(['uploader/pdf']);
+    }
+
+  }
+  login() {
+    this.router.navigate(['home']);
 
   }
 }
