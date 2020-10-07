@@ -36,13 +36,24 @@ import { DataTransferComponent } from './data-transfer/data-transfer.component';
 import { ChildDataComponent } from './data-transfer/child-data/child-data.component';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { DirectivesComponent } from './directives/directives.component';
 import { passwordDirective } from './directive/passwordDirective';
 import { UploadersComponent } from './uploaders/uploaders.component';
 import { FileUploadModule } from 'ng2-file-upload';
 // import { ImageUploaderModule } from 'ngx-image-uploader';
+import { LoadingDirective } from './directive/loading.directive';
+import { MultiLanguageComponent } from './multi-language/multi-language.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { GitApiComponent } from './git-api/git-api.component';
 
 
+
+export function translateHttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 const myroutes: Routes = [
   // {path:'',component:AuthComponent},
@@ -55,11 +66,14 @@ const myroutes: Routes = [
   {path:'forms',component:FormsComponent},
   {path:'datePicker',component:DatepickerComponent},
   {path:'dataTransfer',component:DataTransferComponent},
-  {path:'directives',component:DirectivesComponent},
+  {path:'directives/password',component:DirectivesComponent},
+  {path:'directives/loader',component:DirectivesComponent},
   {path:'uploader/pdf',component:UploadersComponent},
   {path:'uploader/img',component:UploadersComponent},
 
+  {path:'multiLanguge',component:MultiLanguageComponent},
 
+  {path:'gitApi',component:GitApiComponent},
 
 ]
 @NgModule({
@@ -77,7 +91,10 @@ const myroutes: Routes = [
     ChildDataComponent,
     DirectivesComponent,
     passwordDirective,
-    UploadersComponent
+    UploadersComponent,
+    LoadingDirective,
+    MultiLanguageComponent,
+    GitApiComponent
     
   ],
   imports: [
@@ -108,8 +125,16 @@ const myroutes: Routes = [
     MatListModule,
     MatSortModule,
     MatPaginatorModule,
-    // ImageUploaderModule,
-    FileUploadModule
+    FileUploadModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: translateHttpLoaderFactory,
+          deps: [HttpClient]
+        }
+      })
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}

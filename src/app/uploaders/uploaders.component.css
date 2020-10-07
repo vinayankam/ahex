@@ -6,15 +6,14 @@
 
 .img-div {
     width: 438px;
-    height: 2oopx;
-    height: 351px;
+    height:auto;
     position: relative;
     overflow: hidden;
     border: 1px solid black;
 }
 
 img {
-    position: absolute;
+    /* position: absolute; */
     width: 435px;
 }
 

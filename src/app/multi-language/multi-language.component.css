@@ -1,0 +1,10 @@
+button {
+    background: #343a40;
+    border: none;
+    color: white;
+    margin-left: 25px;
+}
+
+.navbar {
+    top: -90px;
+}

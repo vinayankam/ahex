@@ -1,15 +1,49 @@
-<mat-card>
-    <h1>Set password</h1>
-    <form class="example-form" autocomplete="off" >
-        <mat-form-field class="example-full-width">
-        <mat-label>password</mat-label>
-        <input matInput placeholder="Ex. Vinay" [(ngModel)]="password" name="password" (input)="setGivenPassword(password)">
-        </mat-form-field>
-       <mat-form-field class="example-full-width">
-        <mat-label>Comform password</mat-label>
-        <input matInput placeholder="Ex. Vinay" [(ngModel)]="conform" name="conform" passwordDirective>
-        </mat-form-field>
-        <p style="color: red;" *ngIf="ValidatePassword() == true && password && conform">Password not matched</p>
-        <button mat-raised-button color="primary" [disabled]="ValidatePassword()" (click)='submit()'>SUBMIT</button>
-    </form> 
-</mat-card>
+<div *ngIf="activateState == 'password'">
+    <h1>CheckPassword Directive Task</h1>
+    <mat-card>
+        <h2>Set password</h2>
+        <form class="example-form" autocomplete="off" >
+            <mat-form-field class="example-full-width">
+            <mat-label>password</mat-label>
+            <input matInput placeholder="Ex. Vinay" [(ngModel)]="password" name="password" (input)="setGivenPassword(password)">
+            </mat-form-field>
+           <mat-form-field class="example-full-width">
+            <mat-label>Comform password</mat-label>
+            <input matInput placeholder="Ex. Vinay" [(ngModel)]="conform" name="conform" passwordDirective>
+            </mat-form-field>
+            <p style="color: red;" *ngIf="ValidatePassword() == true && password && conform">Password not matched</p>
+            <button mat-raised-button color="primary" [disabled]="ValidatePassword()" (click)='submit()'>SUBMIT</button>
+        </form> 
+    </mat-card>
+</div>
+<br>
+<div *ngIf="activateState == 'loader'">
+    <h1 class="h1">LoaderDirective Task--{{loaderSize}}</h1>
+    <div>
+        <mat-progress-spinner
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [diameter]="loaderSize"
+        [value]="50">
+        </mat-progress-spinner>
+    </div>
+    <button mat-raised-button style="z-index: 99999;" color="primary" (click)="ChangeSize(100)" class="button">Large</button>
+    <button mat-raised-button style="z-index: 99999;" color="primary" (click)="ChangeSize(50)" class="button">Medium</button>
+    <button mat-raised-button style="z-index: 99999;" color="primary" (click)="ChangeSize(25)" class="button">Small</button>        
+</div>
+     <!-- <div class="container-1" [appLoading]="[isLoading, 'md']">  -->
+<!-- <button mat-raised-button style="z-index: 99999;" color="primary" (click)="toggle()" class="button">{{isLoading ? 'Stop Loading' : 'Start Loading'}}</button>
+-->  
+
+
+
+
+
+
+
+
+
+
+
+

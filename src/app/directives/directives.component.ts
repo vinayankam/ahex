@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { dataTransferservice } from '../services/dataTransferservice';
-
+import { Directive, Input, TemplateRef, ViewContainerRef, EmbeddedViewRef, ComponentFactory, ComponentRef, ComponentFactoryResolver } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-directives',
   templateUrl: './directives.component.html',
@@ -9,12 +12,37 @@ import { dataTransferservice } from '../services/dataTransferservice';
 export class DirectivesComponent implements OnInit {
 password: any;
 conform:any;
-  constructor(private service: dataTransferservice) { }
+isLoading = true;
+color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+loaderSize: any = 75;
+  activateState: string;
+  refreshLoader: boolean = true;
+  constructor(private service: dataTransferservice,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // console.log(this.route.snapshot.routeConfig.path)
+    if(this.route.snapshot.routeConfig.path.includes('password')){
+      this.activateState = 'password';
+    }else{
+      this.activateState = 'loader';
+    }
+    // this.requestUserRepos('vinayankam')
+  }
+  ChangeSize(from) {
+    this.refreshLoader = false;
+    //this.loaderSize = 0;
+    
+
+    setTimeout(() => {
+      this.loaderSize = from;
+      this.refreshLoader = true;
+      
+    }, 100);
+  
   }
   submit() {
-    alert("sucess")
+     alert("sucess")
   }
   setGivenPassword(password){
     this.service.setPassword(password)
@@ -26,5 +54,28 @@ conform:any;
       return true
     }
   }
+  toggle() {
+    this.isLoading = !this.isLoading;
+  }
+
+  // requestUserRepos(username){
+    
+   
+
+  //   try {
+  //   const xhr = new XMLHttpRequest();
+  //   const url = `https://api.github.com/users/${username}/repos`;
+  //   xhr.open('GET', url, true);
+  //   xhr.onload = function() {
+  //       const data = JSON.parse(this.response);
+  //       console.log(data); 
+  //   }
+  //   xhr.send();
+  //   }
+  //   catch (exception) {
+  //       console.log(exception)
+  //   }
+    
+  // }
 
 }

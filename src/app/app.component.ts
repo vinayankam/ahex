@@ -16,20 +16,22 @@ export class AppComponent {
   constructor(public router:Router,public auth: AuthService,@Inject(DOCUMENT) public document: Document) { }
   forms() {
     this.router.navigate(['forms'])
-
   }
+
   datePicker() {
     this.router.navigate(['datePicker']);
-
   }
 
   dataTransfer() {
     this.router.navigate(['dataTransfer']);
-
   }
-  directive() {
-    this.router.navigate(['directives']);
 
+  directive(from) {
+    if(from == 'password') {
+      this.router.navigate(['directives/password']);
+    }else{
+    this.router.navigate(['directives/loader']);
+    }
   }
 
   uploader(from) {
@@ -38,10 +40,18 @@ export class AppComponent {
     }else{
       this.router.navigate(['uploader/pdf']);
     }
-
   }
+  
   login() {
     this.router.navigate(['home']);
+  }
+  multi(){
+    this.router.navigate(['multiLanguge']);
+
+  }
+
+  gitApi() {
+    this.router.navigate(['gitApi']);
 
   }
 }
