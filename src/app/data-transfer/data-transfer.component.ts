@@ -43,4 +43,8 @@ parentData:any = [{name:'vinay',gender:'male',country:'india'},
     this.service.setData(this.parentData);
   }
 
+  refresh(a) {
+    console.log(a)
+  }
+
 }

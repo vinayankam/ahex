@@ -54,7 +54,32 @@ import { FoodAppComponent } from './food-app/food-app.component';
 // import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { YouTubePlayerModule } from "@angular/youtube-player";
-
+import { TypeaheadComponent } from './typeahead/typeahead.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { SocialLoginsComponent } from './social-logins/social-logins.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+  AmazonLoginProvider,
+} from 'angularx-social-login';
+// const config = new AuthServiceConfig([
+//   {
+//     id: GoogleLoginProvider.PROVIDER_ID,
+//     provider: new GoogleLoginProvider('234384099147-8r3qoimtjqjdnrg05ehhbn4a9ig1qv87.apps.googleusercontent.com')
+//   },
+//   // {
+//   //   id: FacebookLoginProvider.PROVIDER_ID,
+//   //   provider: new FacebookLoginProvider('561602290896109')
+//   // },
+//   // {
+//   //   id: LinkedInLoginProvider.PROVIDER_ID,
+//   //   provider: new LinkedInLoginProvider("78iqy5cu2e1fgr")
+//   // }
+// ]);
+// export function provideConfig() {
+//   return config;
+// }
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -80,6 +105,8 @@ const myroutes: Routes = [
   {path:'gitApi',component:GitApiComponent},
   {path:'youtube',component:YoutubeComponent},
   {path:'foodApp',component:FoodAppComponent},
+  {path:'typeahead',component:TypeaheadComponent},
+  {path:'socialLogin',component:SocialLoginsComponent},
 
 ]
 @NgModule({
@@ -102,7 +129,9 @@ const myroutes: Routes = [
     MultiLanguageComponent,
     GitApiComponent,
     YoutubeComponent,
-    FoodAppComponent
+    FoodAppComponent,
+    TypeaheadComponent,
+    SocialLoginsComponent
     
   ],
   imports: [
@@ -143,14 +172,18 @@ const myroutes: Routes = [
           deps: [HttpClient]
         }
       }),
-      // NgxYoutubePlayerModule.forRoot(),
       PdfViewerModule,
-      YouTubePlayerModule
+      YouTubePlayerModule,
+      MatAutocompleteModule,
+     SocialLoginModule
   ],
   providers: [
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+    // {
+    //   provide: AuthServiceConfig,
+    //   useFactory: provideConfig
+    // }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-// platformBrowserDynamic().bootstrapModule(AppModule);

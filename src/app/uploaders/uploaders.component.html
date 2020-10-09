@@ -1,28 +1,31 @@
-<div *ngIf="activateState == 'img'">
-    <mat-card >
-        <h1>Multi-Image uploader with max size 3mb</h1>
-        <div class="form-group file-uploader">
-            <input type='file' (change)="onSelectFile($event)" multiple>
-        </div>
-        <h2>Display image</h2>
-        <div class="img-div ">
-            <img *ngFor='let url of urls'  [src]="url" height="200"> <br/>
-        </div>
-    </mat-card>
+<div>
+    <div *ngIf="activateState == 'img'">
+        <mat-card >
+            <h1>Multi-Image uploader with max size 3mb</h1>
+            <div class="form-group file-uploader">
+                <input type='file' (change)="onSelectFile($event)" multiple>
+            </div>
+            <h2>Display image</h2>
+            <div class="img-div ">
+                <img *ngFor='let url of urls'  [src]="url" height="200"> <br/>
+            </div>
+        </mat-card>
+    </div>
+    <br>
+    <div *ngIf="activateState == 'pdf'">
+        <mat-card>
+            <h1>PDF-uploader</h1>
+            <div class="gen-change-type__pdf">
+                <label >
+                <i class="temp-upload-icon" for="pdf-upload">click to upload</i>
+                <input type="file" (change)="pdfOnload($event)" id='pdf-upload' accept=".pdf"  multiple="false" />
+                </label>
+            </div>
+            <div class="display-pdf" [hidden]="!(!isEmptyDrop && !isExcelDrop)">
+                <pdf-viewer [src]="pdfSrc" [render-text]="true" [original-size]="true">
+                </pdf-viewer>
+            </div>
+        </mat-card>
+    </div>
 </div>
-<br>
-<div *ngIf="activateState == 'pdf'">
-    <mat-card>
-        <h1>PDF-uploader</h1>
-        <div class="gen-change-type__pdf">
-            <label >
-              <i class="temp-upload-icon" for="pdf-upload">click to upload</i>
-              <input type="file" (change)="pdfOnload($event)" id='pdf-upload' accept=".pdf"  multiple="false" />
-            </label>
-        </div>
-        <div class="display-pdf" [hidden]="!(!isEmptyDrop && !isExcelDrop)">
-            <pdf-viewer [src]="pdfSrc" [render-text]="true" [original-size]="true">
-            </pdf-viewer>
-        </div>
-    </mat-card>
-</div>
+

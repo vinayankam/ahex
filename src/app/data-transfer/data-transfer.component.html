@@ -28,4 +28,4 @@
 </mat-card>
 <br>
 
-<app-child-data [parentData]="parentData"></app-child-data>
+<app-child-data [parentData]="parentData" (refreshChild)="refresh($event)"></app-child-data>

@@ -1,10 +1,12 @@
-<h1>Git-Api</h1>
-<mat-card>
-    <form class="example-form">
-        <mat-form-field class="example-full-width">
-            <mat-label>Your Name</mat-label>
-            <input matInput placeholder="Ex. Vinay"  [(ngModel)]="userName" name="name">
-        </mat-form-field> 
-        <button mat-raised-button color="primary" [disabled]="!userName" (click)="requestUserRepos(userName)">login</button>
-    </form> 
-</mat-card>
+<div class="main">
+    <h1>Git-Api</h1>
+    <mat-card>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Your Name</mat-label>
+                <input matInput placeholder="Ex. Vinay"  [(ngModel)]="userName" name="name">
+            </mat-form-field> 
+            <button mat-raised-button color="primary" [disabled]="!userName" (click)="requestUserRepos(userName)">login</button>
+        </form> 
+    </mat-card>
+</div>

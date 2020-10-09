@@ -21,3 +21,9 @@
   h1 {
     text-align: center;
   }
+
+  .main {
+    width: 826px;
+    position: relative;
+    top: -286px;
+}

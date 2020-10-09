@@ -62,4 +62,13 @@ export class AppComponent {
     this.router.navigate(['foodApp']);
 
   }
+  typehed() {
+    this.router.navigate(['typeahead']);
+
+  }
+
+  socialLogins() {
+    this.router.navigate(['socialLogin']);
+
+  }
 }

@@ -4,6 +4,12 @@
     margin-bottom: 38px; 
 }
 
+.main {
+    width: 826px;
+    position: relative;
+    top: -286px;
+}
+
 .img-div {
     width: 438px;
     height:auto;

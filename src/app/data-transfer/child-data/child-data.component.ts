@@ -13,6 +13,7 @@ import {MatPaginator} from '@angular/material/paginator';
 
 export class ChildDataComponent implements OnInit {
   @Input() parentData: any=[];
+  // @Output() refreshChild = new EventEmitter<boolean>();
   refresh: boolean;
   sortKey: any;
   dataSource: any;
@@ -39,6 +40,7 @@ export class ChildDataComponent implements OnInit {
       this.refresh= true;
       }, 100);
     })
+      // this.refreshChild.emit(this.refresh);
   }
   
 }

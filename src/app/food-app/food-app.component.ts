@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-food-app',
   templateUrl: './food-app.component.html',
@@ -7,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodAppComponent implements OnInit {
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit(): void {
+  
   }
 
 }
