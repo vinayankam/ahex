@@ -36,7 +36,7 @@ parentData:any = [{name:'vinay',gender:'male',country:'india'},
   constructor(private service: dataTransferservice) { }
 
   ngOnInit(): void {
- this.service.setData(this.parentData);
+    this.service.setData(this.parentData);
   }
   submit() {
     this.parentData.push({name:this.name,gender:this.gender,country:this.selectedValue});

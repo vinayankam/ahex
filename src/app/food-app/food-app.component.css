@@ -1,0 +1,105 @@
+.main {
+    width: 826px;
+    position: relative;
+    top: -286px;
+}
+
+.nav-list {
+    position: absolute;
+    top: 60px;
+    left: 21px;
+    width: 159px;
+    z-index: 1;
+}
+
+ul {
+    display: grid;
+    background: #343a40;
+    width: 159px;
+}
+
+.i {
+    color: white;
+    font-size: 18px;
+    margin-left: 25px;
+}
+
+p {
+    color: white;
+    font-size: 18px; 
+    margin-left: 25px;
+
+}
+
+.userInfo {
+    display: flex;
+    width: 240px;
+    position: absolute;
+    left: 574px;
+    top: 18px;
+}
+
+.form {
+    
+    display: flex;
+    position: absolute;
+    left: 198px;
+    top: 12px;
+
+}
+
+.button {
+    background: #343a40;
+    border: none;
+    font-size: 24px;
+}
+
+.restarents {
+    width: 283px;
+    height: 568px;
+    background-color: darkgrey;
+    position: absolute;
+    left: 230px;
+}
+
+.restarent {
+    width: 209px;
+    height: 568px;
+    background-color: darkgrey;
+    position: absolute;
+    left: 15px;
+    top: 83px;
+}
+
+.map {
+    width: 292px;
+    height: 567px;
+    background-color: darkgrey;
+    position: absolute;
+    left: 518px;
+    top: 82px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 70%;
+    margin-top: 26px;
+    margin-left: 20px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .comment-post {
+    position: absolute;
+    left: 334px;
+    top: 40px;
+  }
+
+  .comments-list-h1 {
+    text-align: center;
+    background: #343a40;
+    color: white;
+  }

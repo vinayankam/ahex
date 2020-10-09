@@ -22,7 +22,7 @@ import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dia
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 //import { AuthModule } from '@auth0/auth0-angular/lib/auth.module';
 import { AuthModule } from '@auth0/auth0-angular';
-import { AuthComponent } from './auth/auth.component';
+// import { authComponent } from './auth/auth.component';
 import { FormsComponent } from './forms/forms.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -48,15 +48,19 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GitApiComponent } from './git-api/git-api.component';
-
-
+import { YoutubeComponent } from './youtube/youtube.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { FoodAppComponent } from './food-app/food-app.component';
+// import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { YouTubePlayerModule } from "@angular/youtube-player";
 
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 const myroutes: Routes = [
-  // {path:'',component:AuthComponent},
+  //  {path:'',component:authComponent},
 
   {path:'home',component:HomeComponent},
   {path:'signup',component:SignupComponent},
@@ -74,6 +78,8 @@ const myroutes: Routes = [
   {path:'multiLanguge',component:MultiLanguageComponent},
 
   {path:'gitApi',component:GitApiComponent},
+  {path:'youtube',component:YoutubeComponent},
+  {path:'foodApp',component:FoodAppComponent},
 
 ]
 @NgModule({
@@ -84,7 +90,7 @@ const myroutes: Routes = [
     LoginComponent,
     LoginSucessComponent,
     ForgotPasswordComponent,
-    AuthComponent,
+    // authComponent,
     FormsComponent,
     DatepickerComponent,
     DataTransferComponent,
@@ -94,7 +100,9 @@ const myroutes: Routes = [
     UploadersComponent,
     LoadingDirective,
     MultiLanguageComponent,
-    GitApiComponent
+    GitApiComponent,
+    YoutubeComponent,
+    FoodAppComponent
     
   ],
   imports: [
@@ -134,7 +142,10 @@ const myroutes: Routes = [
           useFactory: translateHttpLoaderFactory,
           deps: [HttpClient]
         }
-      })
+      }),
+      // NgxYoutubePlayerModule.forRoot(),
+      PdfViewerModule,
+      YouTubePlayerModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
@@ -142,3 +153,4 @@ const myroutes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// platformBrowserDynamic().bootstrapModule(AppModule);

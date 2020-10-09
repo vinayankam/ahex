@@ -9,29 +9,20 @@
             <img *ngFor='let url of urls'  [src]="url" height="200"> <br/>
         </div>
     </mat-card>
-
 </div>
 <br>
 <div *ngIf="activateState == 'pdf'">
     <mat-card>
-        <h1>PDF uploader with max size 5mb</h1>
-        <div class="form-group file-uploader">  
-            <label for="file">Upload Image</label>
-            <input type="file" id="file" (change)="pdfFileInput($event.target.files)" class="file">    
+        <h1>PDF-uploader</h1>
+        <div class="gen-change-type__pdf">
+            <label >
+              <i class="temp-upload-icon" for="pdf-upload">click to upload</i>
+              <input type="file" (change)="pdfOnload($event)" id='pdf-upload' accept=".pdf"  multiple="false" />
+            </label>
         </div>
-        <h2>Display image</h2>
-        <div class="img-div">
-            <!-- <img   src="{{filesArray}}" height="200"> <br/> -->
-            <img id='pdfFile' src=''>
+        <div class="display-pdf" [hidden]="!(!isEmptyDrop && !isExcelDrop)">
+            <pdf-viewer [src]="pdfSrc" [render-text]="true" [original-size]="true">
+            </pdf-viewer>
         </div>
     </mat-card>
 </div>
-
-
-
-
-<!-- <span class="hidden-file">
-    <input type="file" #fileInput ng2FileSelect [uploader]="uploader" (onFileSelected)="onFileSelected($event)" />
-</span>
-
-<img id='output' src='{{pic}}'>        -->

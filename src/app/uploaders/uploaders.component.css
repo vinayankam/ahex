@@ -19,9 +19,29 @@ img {
 
 mat-card {
     height: auto;
+    width: 880px;
 }
 
 h1 {
     background-color: black;
     color: white;
+    text-align: center;
 }
+
+  /* pdf */
+  
+.display-pdf {
+    height: 222px;
+    width: 100%;
+    border: 2px solid;
+    overflow: auto;
+}
+  
+.ng2-pdf-viewer-container {
+    overflow-x: initial !important;
+}
+
+::ng-deep .ng2-pdf-viewer-container {
+    overflow-x: initial !important;
+}
+  

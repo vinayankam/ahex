@@ -5,6 +5,6 @@ mat-action-list {
 }
 
 .rooter {
-    width: auto;
+    /* width: auto;  */
     margin: auto;
 }

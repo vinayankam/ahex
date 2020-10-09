@@ -11,13 +11,15 @@ export class dataTransferservice {
     private data = new BehaviorSubject<any>('');
     private password : any;
     public correct : boolean;
-
     setData(a) {
         this.data.next(a);
+    console.log( this.data)
+
     }
 
     getData() {
         return this.data.asObservable();
+       
     }
     setPassword(a) {
       this.password = a;

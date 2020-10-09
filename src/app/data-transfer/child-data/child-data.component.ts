@@ -28,8 +28,8 @@ export class ChildDataComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    
   }
+  
   ngOnInit(): void {
     this.refresh= true;
     this.service.getData().subscribe(data => {
@@ -37,7 +37,7 @@ export class ChildDataComponent implements OnInit {
       this.refresh= false;
       setTimeout(() => {
       this.refresh= true;
-      }, 0);
+      }, 100);
     })
   }
   

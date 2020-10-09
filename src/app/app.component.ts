@@ -54,4 +54,12 @@ export class AppComponent {
     this.router.navigate(['gitApi']);
 
   }
+  youtube() {
+    this.router.navigate(['youtube']);
+
+  }
+  food() {
+    this.router.navigate(['foodApp']);
+
+  }
 }
