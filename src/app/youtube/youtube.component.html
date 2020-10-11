@@ -70,9 +70,6 @@
         <mat-selection-list  #shoes [multiple]="false">
             <h1 style="text-align: center;">Trending</h1>
             <mat-list-option *ngFor="let link of trendingVideos; let i = index;" [value]="link" class="list-hight">
-                <!-- <iframe width="420" height="315"
-                [src]="getEmbed(link)">
-                </iframe> -->
                 <youtube-player 
                 videoId="{{link.link}}" 
                 suggestedQuality="highres" 
@@ -84,8 +81,7 @@
                 </youtube-player>
                 <p class="trending-p" (click)="navigate(link.link)">{{link.description}}</p>
             </mat-list-option>
-          
-          </mat-selection-list>
+        </mat-selection-list>
     </div>
     <div class="suggestion">
 
