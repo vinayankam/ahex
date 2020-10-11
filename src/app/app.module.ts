@@ -64,6 +64,7 @@ import {
   FacebookLoginProvider,
   AmazonLoginProvider,
 } from 'angularx-social-login';
+import { MouseMoveComponent } from './mouse-move/mouse-move.component';
 // const config = new AuthServiceConfig([
 //   {
 //     id: GoogleLoginProvider.PROVIDER_ID,
@@ -108,6 +109,7 @@ const myroutes: Routes = [
   {path:'foodApp',component:FoodAppComponent},
   {path:'typeahead',component:TypeaheadComponent},
   {path:'socialLogin',component:SocialLoginsComponent},
+  {path:'mouseMove',component:MouseMoveComponent},
 
 ]
 @NgModule({
@@ -132,7 +134,8 @@ const myroutes: Routes = [
     YoutubeComponent,
     FoodAppComponent,
     TypeaheadComponent,
-    SocialLoginsComponent
+    SocialLoginsComponent,
+    MouseMoveComponent
     
   ],
   imports: [
@@ -183,10 +186,30 @@ const myroutes: Routes = [
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
-    // {
-    //   provide: AuthServiceConfig,
-    //   useFactory: provideConfig
-    // }
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '234384099147-tt54amdladqdgc5ifrhtg2ekqm9eglvh.apps.googleusercontent.com'
+            ),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('1075646596221428'),
+          },
+          // {
+          //   id: AmazonLoginProvider.PROVIDER_ID,
+          //   provider: new AmazonLoginProvider(
+          //     'clientId'
+          //   ),
+          // },
+        ],
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent]
 })

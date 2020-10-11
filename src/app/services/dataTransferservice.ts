@@ -15,12 +15,6 @@ export class dataTransferservice {
   private password : any;
   public correct : boolean;
 
-//   GET 
-//   https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=[YOUR_API_KEY] HTTP/1.1
-
-// Authorization: Bearer [YOUR_ACCESS_TOKEN]
-// Accept: application/json
-
 
   getVideosForChanel(channel, maxResults): Observable<Object> {
     let api = 'AIzaSyBVyGZ990DrPWTWVRd0hFMKjo5Hf1yLN5U'
@@ -28,6 +22,16 @@ export class dataTransferservice {
     return this.http.get(url)
       .pipe(map((res) => {
         // console.log(res)
+        return res;
+      }))
+  }
+
+  getsuggetions(): Observable<Object> {
+    let api = 'AIzaSyBVyGZ990DrPWTWVRd0hFMKjo5Hf1yLN5U'
+    let url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=['+ api+']HTTP/1.1'
+    return this.http.get(url)
+      .pipe(map((res) => {
+        console.log(res)
         return res;
       }))
   }
@@ -51,6 +55,12 @@ export class dataTransferservice {
 
   getGitApi():Observable<any> {
     const url = "https://api.github.com/search/repositories?q=topic:ruby+topic:rails"
+
+    return this.http.get<any>(url);
+  }
+
+  getGitApiUser():Observable<any> {
+    const url = " https://api.github.com/search/users?q=tom+repos:%3E42+followers:%3E1000"
 
     return this.http.get<any>(url);
   }

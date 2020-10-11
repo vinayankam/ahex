@@ -10,12 +10,6 @@
 }
 
 mat-card {
-  /* width: 654px;
-  margin: auto;
-  position: relative;
-  height: 202px;
-  margin-top: 22PX;
-  top: 63px; */
   width: 374px;
 }
 
@@ -23,4 +17,6 @@ mat-card {
   width: 826px;
   position: relative;
   top: -286px;
+  display:flex;
+  justify-content: space-around;
 }

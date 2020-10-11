@@ -71,4 +71,8 @@ export class AppComponent {
     this.router.navigate(['socialLogin']);
 
   }
+  mouseMove() {
+    this.router.navigate(['mouseMove']);
+
+  }
 }

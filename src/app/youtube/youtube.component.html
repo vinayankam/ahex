@@ -18,9 +18,21 @@
         <div>
             <form class="form">
                 <div>
-                    <input type="text" class="form-control" placeholder="search"  name="search"  autocomplete="off">
+                    <input type="text"
+                placeholder="Pick one"
+                aria-label="Number"
+                matInput
+                [formControl]="myControl"
+                [matAutocomplete]="auto" style="background-color:white;width: 278px;"
+                class="form-control"
+                [(ngModel)]="searchValue">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)='search($event.option.value)' [displayWith]="displayFn">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option.description}}
+                    </mat-option>
+                  </mat-autocomplete>
                 </div>
-                <button>
+                <button mat-raised-button color="primary" (click)="search($event.option.value)">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
             </form>
@@ -64,7 +76,7 @@
             <mat-list-option *ngFor="let comment of comments" [value]="comment">
               {{comment}}
             </mat-list-option>
-          </mat-selection-list>
+        </mat-selection-list>
     </div>
     <div class="trending">
         <mat-selection-list  #shoes [multiple]="false">
