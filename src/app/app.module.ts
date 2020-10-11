@@ -51,6 +51,7 @@ import { GitApiComponent } from './git-api/git-api.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FoodAppComponent } from './food-app/food-app.component';
+// import { AgmCoreModule } from '@agm/core';
 // import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { YouTubePlayerModule } from "@angular/youtube-player";
@@ -175,6 +176,9 @@ const myroutes: Routes = [
       PdfViewerModule,
       YouTubePlayerModule,
       MatAutocompleteModule,
+      // AgmCoreModule.forRoot({
+      //   apiKey: 'AIzaSyDDAWRodpMTqBm0kMTfy_CwvwFByfFRM8I'
+      // }),
      SocialLoginModule
   ],
   providers: [

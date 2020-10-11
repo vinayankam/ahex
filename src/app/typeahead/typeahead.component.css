@@ -18,3 +18,9 @@ mat-card {
   top: 63px; */
   width: 374px;
 }
+
+.main {
+  width: 826px;
+  position: relative;
+  top: -286px;
+}

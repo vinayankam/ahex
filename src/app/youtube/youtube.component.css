@@ -1,7 +1,7 @@
 .main {
     width: 826px;
     position: relative;
-    top: -286px;
+    top: -363px;
 }
 
 .nav-list {
@@ -29,6 +29,18 @@ p {
     font-size: 18px; 
     margin-left: 25px;
 
+}
+
+.list-hight {
+    height: 176px !important;
+    position: relative;
+}
+
+.trendingVideos {
+    width: 176px;
+    height: 104px;
+    position: absolute;
+    top:3px;
 }
 
 .userInfo {
@@ -82,7 +94,7 @@ p {
 
 .trending {
     width: 209px;
-    height: 568px;
+    height: auto;
     background-color: darkgrey;
     position: absolute;
     left: 15px;
@@ -120,4 +132,9 @@ p {
     text-align: center;
     background: #343a40;
     color: white;
+  }
+
+  .trending-p {
+    position: absolute;
+    top: 106px;
   }

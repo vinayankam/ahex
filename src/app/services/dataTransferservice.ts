@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,23 @@ export class dataTransferservice {
   private data = new BehaviorSubject<any>('');
   private password : any;
   public correct : boolean;
+
+//   GET 
+//   https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=[YOUR_API_KEY] HTTP/1.1
+
+// Authorization: Bearer [YOUR_ACCESS_TOKEN]
+// Accept: application/json
+
+
+  getVideosForChanel(channel, maxResults): Observable<Object> {
+    let api = 'AIzaSyBVyGZ990DrPWTWVRd0hFMKjo5Hf1yLN5U'
+    let url = 'https://www.googleapis.com/youtube/v3/search?key=' + api + '&channelId=' + channel + '&order=date&part=snippet &type=video,id&maxResults=' + maxResults
+    return this.http.get(url)
+      .pipe(map((res) => {
+        // console.log(res)
+        return res;
+      }))
+  }
 
   setData(a) {
     this.data.next(a);

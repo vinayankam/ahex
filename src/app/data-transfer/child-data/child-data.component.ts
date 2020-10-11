@@ -32,13 +32,10 @@ export class ChildDataComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.refresh= true;
     this.service.getData().subscribe(data => {
       this.dataSource  = new MatTableDataSource(data); 
-      this.refresh= false;
-      setTimeout(() => {
-      this.refresh= true;
-      }, 100);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
     })
       // this.refreshChild.emit(this.refresh);
   }

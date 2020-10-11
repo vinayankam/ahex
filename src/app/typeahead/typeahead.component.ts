@@ -13,32 +13,39 @@ export class TypeaheadComponent implements OnInit {
   options: any = [];
   forLoopLIst:any;
   filteredOptions: Observable<string[]>;
+  load: any;
+  namesArray: any = [];
+  data:any
+  loading:boolean = true;
   constructor(private gitService:dataTransferservice) { }
 
   ngOnInit(): void {
+    this.load = false;
+    setTimeout(() => {
+      this.load = true;
+    }, 5000);
   this.options = ['vinay','bunny'];
-    
     this.gitService.getGitApi().subscribe((data) => {
-      console.log(data.items)
-      data.items.forEach(function (value) {
-      console.log(value);
-      console.log(value.name);
-      //  this.options.push(value.name);
-      // this.forLoopLIst = value.name;
-      }); 
-
+      this.data = data;
     })
-        // this.options.push(this.forLoopLIst);
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
-    // console.log(this.list)
+    setTimeout(() => {
+      let a = []
+      this.data.items.forEach(function (value) {
+        a.push(value.name);
+        }); 
+        this.options = a;
+      this.filteredOptions = this.myControl.valueChanges.pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
+    }, 5000);
+    setTimeout(() => {
+      this.loading = false;
+    }, 5000);
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
-
 }
