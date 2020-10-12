@@ -1,0 +1,24 @@
+.cursor {
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+  }
+  
+.cursor::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 50%;
+    opacity: .5;
+}
+
+.expand {
+    width: 20px;
+    height: 20px;
+    border: 1px solid red;
+}

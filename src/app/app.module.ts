@@ -41,7 +41,6 @@ import { DirectivesComponent } from './directives/directives.component';
 import { passwordDirective } from './directive/passwordDirective';
 import { UploadersComponent } from './uploaders/uploaders.component';
 import { FileUploadModule } from 'ng2-file-upload';
-// import { ImageUploaderModule } from 'ngx-image-uploader';
 import { LoadingDirective } from './directive/loading.directive';
 import { MultiLanguageComponent } from './multi-language/multi-language.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -51,37 +50,19 @@ import { GitApiComponent } from './git-api/git-api.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FoodAppComponent } from './food-app/food-app.component';
-// import { AgmCoreModule } from '@agm/core';
-// import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { TypeaheadComponent } from './typeahead/typeahead.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { SocialLoginsComponent } from './social-logins/social-logins.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleMapsModule } from '@angular/google-maps'
 import {
   GoogleLoginProvider,
   FacebookLoginProvider,
   AmazonLoginProvider,
 } from 'angularx-social-login';
 import { MouseMoveComponent } from './mouse-move/mouse-move.component';
-// const config = new AuthServiceConfig([
-//   {
-//     id: GoogleLoginProvider.PROVIDER_ID,
-//     provider: new GoogleLoginProvider('234384099147-8r3qoimtjqjdnrg05ehhbn4a9ig1qv87.apps.googleusercontent.com')
-//   },
-//   // {
-//   //   id: FacebookLoginProvider.PROVIDER_ID,
-//   //   provider: new FacebookLoginProvider('561602290896109')
-//   // },
-//   // {
-//   //   id: LinkedInLoginProvider.PROVIDER_ID,
-//   //   provider: new LinkedInLoginProvider("78iqy5cu2e1fgr")
-//   // }
-// ]);
-// export function provideConfig() {
-//   return config;
-// }
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -182,7 +163,8 @@ const myroutes: Routes = [
       // AgmCoreModule.forRoot({
       //   apiKey: 'AIzaSyDDAWRodpMTqBm0kMTfy_CwvwFByfFRM8I'
       // }),
-     SocialLoginModule
+     SocialLoginModule,
+     GoogleMapsModule
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},

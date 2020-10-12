@@ -1,7 +1,7 @@
 .main {
-    width: 826px;
+    width: 1034px;;
     position: relative;
-    top: -286px;
+    top: -363px;
 }
 
 .nav-list {
@@ -31,6 +31,11 @@ p {
 
 }
 
+.img {
+    width: 82px;
+    height: 52px;
+}
+
 .userInfo {
     display: flex;
     width: 240px;
@@ -56,7 +61,7 @@ p {
 
 .restarents {
     width: 283px;
-    height: 568px;
+    height: 525px;
     background-color: darkgrey;
     position: absolute;
     left: 230px;
@@ -64,7 +69,7 @@ p {
 
 .restarent {
     width: 209px;
-    height: 568px;
+    height: auto;
     background-color: darkgrey;
     position: absolute;
     left: 15px;
@@ -72,8 +77,8 @@ p {
 }
 
 .map {
-    width: 292px;
-    height: 567px;
+    width: 499px;
+    height: auto;
     background-color: darkgrey;
     position: absolute;
     left: 518px;
@@ -105,5 +110,28 @@ p {
   }
 
   agm-map {
-      height:600px
+    height:600px
+  }
+
+  .mat-list-option {
+    display: flex;
+    height: auto;
+  }
+
+  .viewImg {
+    width: 281px;
+    height: auto;
+  }
+
+  .imgDiv {
+    width: 281px;
+    height: auto;
+    position: absolute;
+    top: 283px;
+  }
+
+  .viewH1 {
+    text-align: center;
+    font-size: 34px;
+    margin-top: 16px;
   }
