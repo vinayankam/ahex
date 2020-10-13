@@ -11,14 +11,11 @@ import {map, startWith} from 'rxjs/operators';
 export class TypeaheadComponent implements OnInit {
   myControl = new FormControl();
   myControlUser = new FormControl();
-
   options: any = [];
   optionsUser: any = [];
-
   forLoopLIst:any;
   filteredOptions: Observable<string[]>;
   filteredOptionsUser: Observable<string[]>;
-
   load: any;
   namesArray: any = [];
   data:any

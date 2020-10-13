@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -20,9 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-//import { AuthModule } from '@auth0/auth0-angular/lib/auth.module';
 import { AuthModule } from '@auth0/auth0-angular';
-// import { authComponent } from './auth/auth.component';
 import { FormsComponent } from './forms/forms.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -68,8 +65,6 @@ export function translateHttpLoaderFactory(http: HttpClient) {
 }
 
 const myroutes: Routes = [
-  //  {path:'',component:authComponent},
-
   {path:'home',component:HomeComponent},
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
@@ -82,16 +77,13 @@ const myroutes: Routes = [
   {path:'directives/loader',component:DirectivesComponent},
   {path:'uploader/pdf',component:UploadersComponent},
   {path:'uploader/img',component:UploadersComponent},
-
   {path:'multiLanguge',component:MultiLanguageComponent},
-
   {path:'gitApi',component:GitApiComponent},
   {path:'youtube',component:YoutubeComponent},
   {path:'foodApp',component:FoodAppComponent},
   {path:'typeahead',component:TypeaheadComponent},
   {path:'socialLogin',component:SocialLoginsComponent},
   {path:'mouseMove',component:MouseMoveComponent},
-
 ]
 @NgModule({
   declarations: [
@@ -101,7 +93,6 @@ const myroutes: Routes = [
     LoginComponent,
     LoginSucessComponent,
     ForgotPasswordComponent,
-    // authComponent,
     FormsComponent,
     DatepickerComponent,
     DataTransferComponent,
@@ -160,9 +151,6 @@ const myroutes: Routes = [
       PdfViewerModule,
       YouTubePlayerModule,
       MatAutocompleteModule,
-      // AgmCoreModule.forRoot({
-      //   apiKey: 'AIzaSyDDAWRodpMTqBm0kMTfy_CwvwFByfFRM8I'
-      // }),
      SocialLoginModule,
      GoogleMapsModule
   ],
