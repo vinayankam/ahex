@@ -171,12 +171,6 @@ const myroutes: Routes = [
             id: FacebookLoginProvider.PROVIDER_ID,
             provider: new FacebookLoginProvider('1075646596221428'),
           },
-          // {
-          //   id: AmazonLoginProvider.PROVIDER_ID,
-          //   provider: new AmazonLoginProvider(
-          //     'clientId'
-          //   ),
-          // },
         ],
       } as SocialAuthServiceConfig,
     }

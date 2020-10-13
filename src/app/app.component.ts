@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-
 import {  Inject, OnInit } from '@angular/core';
-
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 
@@ -45,34 +43,28 @@ export class AppComponent {
   login() {
     this.router.navigate(['home']);
   }
+
   multi(){
     this.router.navigate(['multiLanguge']);
-
   }
 
   gitApi() {
     this.router.navigate(['gitApi']);
-
   }
   youtube() {
     this.router.navigate(['youtube']);
-
   }
   food() {
     this.router.navigate(['foodApp']);
-
   }
   typehed() {
     this.router.navigate(['typeahead']);
-
   }
 
   socialLogins() {
     this.router.navigate(['socialLogin']);
-
   }
   mouseMove() {
     this.router.navigate(['mouseMove']);
-
   }
 }
