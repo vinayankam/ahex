@@ -36,7 +36,6 @@ export class SignupComponent implements OnInit {
 
   home() {
     this.router.navigate([''])
-
   }
 
 }
