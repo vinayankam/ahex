@@ -8,9 +8,12 @@ export class FoodAppComponent implements OnInit {
   view:boolean = false;
   myRestaurent: any;
   restarentImg: any;
- center: google.maps.LatLngLiteral
- markers:any; 
-  restarens: any = [{name:"vamshi international",image:"../../assets/images/vamshiHotal.jpg"},
+  center: any = {
+    lat:  17.3596 ,
+    lng:  78.0889,
+  }//google.maps.LatLngLiteral
+  markers:any = []; 
+  restarens: any = [{name:"vamshi international",image:"../../assets/images/vamshiHotal.jpg",position:[{lat:17.222,lng:17.4444}]},
                     {name:"nikilsai international",image:"../../assets/images/nikilSaiHotel.jpg"},
                     {name:"Hotal paradise",image:"../../assets/images/paradiceHotel.jpg"},
                     {name:"Hot cups",image:"../../assets/images/hotel.jpg"},
@@ -23,10 +26,11 @@ export class FoodAppComponent implements OnInit {
   ngOnInit(): void {
   navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
+        lat: 17.3596,
+        lng:78.0889,
       }
     })
+    this.addMarker()
   }
   openview(a) {
     this.myRestaurent = a.name;
