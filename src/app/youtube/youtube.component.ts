@@ -31,12 +31,12 @@ export class YoutubeComponent implements OnInit {
          a.push({link:value.id.videoId,description:value.snippet.description});
         }); 
         this.trendingVideos = a;
-        let b =[]
-        this.trendingVideos.forEach(function (value) {
-          b.push(value.description);
-          }); 
-        //this.options = b
-        // console.log(this.options)
+        // let b =[]
+        // this.trendingVideos.forEach(function (value) {
+        //   b.push(value.description);
+        //   }); 
+        // //this.options = b
+        // // console.log(this.options)
         this.filteredOptions = this.myControl.valueChanges.pipe(
           startWith(''),
           map(value => this._filter(value))

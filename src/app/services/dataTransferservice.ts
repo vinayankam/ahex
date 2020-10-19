@@ -18,13 +18,14 @@ export class dataTransferservice {
     let url = 'https://www.googleapis.com/youtube/v3/search?key=' + api + '&channelId=' + channel + '&order=date&part=snippet &type=video,id&maxResults=' + maxResults
     return this.http.get(url)
       .pipe(map((res) => {
+        console.log(res)
         return res;
       }))
   }
 
   getsuggetions(): Observable<Object> {
     let api = 'AIzaSyBVyGZ990DrPWTWVRd0hFMKjo5Hf1yLN5U'
-    let url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=['+ api+']HTTP/1.1'
+    let url = 'https://www.googleapis.com/youtube/v3/videos?part=contentDetails&chart=mostPopular&regionCode=IN&maxResults=5&key=AIzaSyBVyGZ990DrPWTWVRd0hFMKjo5Hf1yLN5U'
     return this.http.get(url)
       .pipe(map((res) => {
         console.log(res)

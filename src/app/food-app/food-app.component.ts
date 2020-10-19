@@ -43,8 +43,8 @@ export class FoodAppComponent implements OnInit {
         lng:a.position.lng + ((Math.random() - 0.5) * 2) / 10,
       },
       label: {
-        color: 'red',
-        text: 'Marker label ' + (this.markers.length + 1),
+        color: 'pink',
+        text: this.myRestaurent,
       },
       title: 'Marker title ' + (this.markers.length + 1),
       options: { animation: google.maps.Animation.BOUNCE },
