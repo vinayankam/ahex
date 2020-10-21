@@ -36,6 +36,7 @@ export class FoodAppComponent implements OnInit {
   openview(a) {
     this.myRestaurent = a.name;
     this.restarentImg = a.image;
+    this.markers = []
     this.view = true;
     this.markers.push({
       position: {
