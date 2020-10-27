@@ -7,7 +7,7 @@
             <mat-label>password</mat-label>
             <input matInput placeholder="Ex. Vinay" [(ngModel)]="password" name="password" (input)="setGivenPassword(password)">
             </mat-form-field>
-           <mat-form-field class="example-full-width">
+            <mat-form-field class="example-full-width">
             <mat-label>Comform password</mat-label>
             <input matInput placeholder="Ex. Vinay" [(ngModel)]="conform" name="conform" passwordDirective>
             </mat-form-field>
@@ -32,9 +32,6 @@
     <button mat-raised-button style="z-index: 99999;" color="primary" (click)="ChangeSize(50)" class="button">Medium</button>
     <button mat-raised-button style="z-index: 99999;" color="primary" (click)="ChangeSize(25)" class="button">Small</button>        
 </div>
-     <!-- <div class="container-1" [appLoading]="[isLoading, 'md']">  -->
-<!-- <button mat-raised-button style="z-index: 99999;" color="primary" (click)="toggle()" class="button">{{isLoading ? 'Stop Loading' : 'Start Loading'}}</button>
--->  
 
 
 

@@ -11,14 +11,13 @@ export class LoginComponent implements OnInit {
   name: any;
   password: any;
   userList: any = [];
-  error: boolean = false;
+  error: boolean;
   constructor(public router:Router) { }
 
   ngOnInit(): void {
     this.userList = JSON.parse(localStorage.getItem("submitedList"));
   }
   login() {
-    
     this.userList.forEach(user => {
       if(user.name == this.name && user.password == this.password) {
         this.router.navigate(['loginSucess'])
@@ -27,11 +26,12 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
   home() {
-    this.router.navigate([''])
+    this.router.navigate(['']);
   }
+
   forgot() {
-    this.router.navigate(['forgotPassword'])
-    
+    this.router.navigate(['forgotPassword']);
   }
 }

@@ -6,19 +6,16 @@ import { dataTransferservice } from '../services/dataTransferservice';
 })
 export class passwordDirective {
   constructor(public el: ElementRef, public service: dataTransferservice) {  
- }
+  }
 
   @HostListener('input') onInput() {
-    let b = this.el.nativeElement.value
-  
-    let a = this.service.getPassword()
- 
-    if(a == b){
+    let password = this.el.nativeElement.value;
+    let checkPassword = this.service.getPassword();
+    if(checkPassword == password){
       this.service.correct = true;
     }else{
       this.service.correct = false;
     }
   }
-   
 }
 

@@ -10,43 +10,40 @@ import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
   styleUrls: ['./directives.component.css']
 })
 export class DirectivesComponent implements OnInit {
-password: any;
-conform:any;
-isLoading = true;
-color: ThemePalette = 'primary';
+  password: any;
+  conform:any;
+  isLoading = true;
+  color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'indeterminate';
-loaderSize: any = 75;
+  loaderSize: number = 75;
   activateState: string;
   refreshLoader: boolean = true;
   constructor(private service: dataTransferservice,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // console.log(this.route.snapshot.routeConfig.path)
     if(this.route.snapshot.routeConfig.path.includes('password')){
       this.activateState = 'password';
     }else{
       this.activateState = 'loader';
     }
-    // this.requestUserRepos('vinayankam')
   }
-  ChangeSize(from) {
-    this.refreshLoader = false;
-    //this.loaderSize = 0;
-    
 
+  ChangeSize(size) {
+    this.refreshLoader = false;
     setTimeout(() => {
-      this.loaderSize = from;
-      this.refreshLoader = true;
-      
+      this.loaderSize = size;
+      this.refreshLoader = true; 
     }, 100);
-  
   }
+
   submit() {
-     alert("sucess")
+    alert("sucess")
   }
+
   setGivenPassword(password){
     this.service.setPassword(password)
   }
+
   ValidatePassword(){
     if(this.service.correct == true){
       return false;
@@ -54,28 +51,8 @@ loaderSize: any = 75;
       return true
     }
   }
+
   toggle() {
     this.isLoading = !this.isLoading;
   }
-
-  // requestUserRepos(username){
-    
-   
-
-  //   try {
-  //   const xhr = new XMLHttpRequest();
-  //   const url = `https://api.github.com/users/${username}/repos`;
-  //   xhr.open('GET', url, true);
-  //   xhr.onload = function() {
-  //       const data = JSON.parse(this.response);
-  //       console.log(data); 
-  //   }
-  //   xhr.send();
-  //   }
-  //   catch (exception) {
-  //       console.log(exception)
-  //   }
-    
-  // }
-
 }

@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { dataTransferservice } from '../services/dataTransferservice';
 
-interface country {
-  value: string;
-  viewValue: string;
-}
 @Component({
   selector: 'app-data-transfer',
   templateUrl: './data-transfer.component.html',
@@ -24,11 +20,11 @@ parentData:any = [{name:'vinay',gender:'male',country:'india'},
                   {name:'iii',gender:'female',country:'aus'},
                   {name:'rojnna',gender:'female',country:'aus'},
 ];
-  name: any;
-  password: any;
-  gender: any;
+  name: string;
+  password: number;
+  gender: string;
   selectedValue: string;
-  Country: country[] = [
+  Country: any[] = [
     {value: 'India', viewValue: 'India'},
     {value: 'USA', viewValue: 'USA'},
     {value: 'UAE', viewValue: 'UAE'}
@@ -38,13 +34,9 @@ parentData:any = [{name:'vinay',gender:'male',country:'india'},
   ngOnInit(): void {
     this.service.setData(this.parentData);
   }
+
   submit() {
     this.parentData.push({name:this.name,gender:this.gender,country:this.selectedValue});
     this.service.setData(this.parentData);
   }
-
-  refresh(a) {
-    console.log(a)
-  }
-
 }

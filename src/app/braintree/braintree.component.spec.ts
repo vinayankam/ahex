@@ -1,19 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ChildDataComponent } from './child-data.component';
 
-describe('ChildDataComponent', () => {
-  let component: ChildDataComponent;
-  let fixture: ComponentFixture<ChildDataComponent>;
+import { BraintreeComponent } from './braintree.component';
+
+describe('BraintreeComponent', () => {
+  let component: BraintreeComponent;
+  let fixture: ComponentFixture<BraintreeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChildDataComponent ]
+      declarations: [ BraintreeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChildDataComponent);
+    fixture = TestBed.createComponent(BraintreeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

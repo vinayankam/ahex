@@ -4,7 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { dataTransferservice } from 'src/app/services/dataTransferservice';
 import {MatPaginator} from '@angular/material/paginator';
 
-
 @Component({
   selector: 'app-child-data',
   templateUrl: './child-data.component.html',
@@ -13,18 +12,13 @@ import {MatPaginator} from '@angular/material/paginator';
 
 export class ChildDataComponent implements OnInit {
   @Input() parentData: any=[];
-  // @Output() refreshChild = new EventEmitter<boolean>();
-  refresh: boolean;
-  sortKey: any;
-  dataSource: any;
-
-  constructor(private service: dataTransferservice) { }
-
-  displayedColumns: string[] = ['name', 'gender','country'];
-
-
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  refresh: boolean;
+  dataSource: any;
+  displayedColumns: string[] = ['name', 'gender','country'];
+
+  constructor(private service: dataTransferservice) { }
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -37,7 +31,5 @@ export class ChildDataComponent implements OnInit {
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     })
-      // this.refreshChild.emit(this.refresh);
-  }
-  
+  } 
 }

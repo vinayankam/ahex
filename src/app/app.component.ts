@@ -10,8 +10,10 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ahex';
+  title: string = 'ahex';
+
   constructor(public router:Router,public auth: AuthService,@Inject(DOCUMENT) public document: Document) { }
+
   forms() {
     this.router.navigate(['forms'])
   }
@@ -39,7 +41,7 @@ export class AppComponent {
       this.router.navigate(['uploader/pdf']);
     }
   }
-  
+
   login() {
     this.router.navigate(['home']);
   }
@@ -51,12 +53,15 @@ export class AppComponent {
   gitApi() {
     this.router.navigate(['gitApi']);
   }
+
   youtube() {
     this.router.navigate(['youtube']);
   }
+
   food() {
     this.router.navigate(['foodApp']);
   }
+
   typehed() {
     this.router.navigate(['typeahead']);
   }
@@ -64,7 +69,12 @@ export class AppComponent {
   socialLogins() {
     this.router.navigate(['socialLogin']);
   }
+
   mouseMove() {
     this.router.navigate(['mouseMove']);
+  }
+  
+  brainTree() {
+    this.router.navigate(['brainTree']);
   }
 }

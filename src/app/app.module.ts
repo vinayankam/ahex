@@ -5,35 +5,35 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { LoginSucessComponent } from './login-sucess/login-sucess.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatSelectModule} from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatTableModule} from '@angular/material/table';
-import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { FormsComponent } from './forms/forms.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import * as moment from 'moment';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { DataTransferComponent } from './data-transfer/data-transfer.component';
 import { ChildDataComponent } from './data-transfer/child-data/child-data.component';
-import {MatSortModule} from '@angular/material/sort';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DirectivesComponent } from './directives/directives.component';
 import { passwordDirective } from './directive/passwordDirective';
 import { UploadersComponent } from './uploaders/uploaders.component';
@@ -54,12 +54,11 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { SocialLoginsComponent } from './social-logins/social-logins.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleMapsModule } from '@angular/google-maps'
-import {
-  GoogleLoginProvider,
-  FacebookLoginProvider,
-  AmazonLoginProvider,
-} from 'angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { MouseMoveComponent } from './mouse-move/mouse-move.component';
+import { BraintreeComponent } from './braintree/braintree.component';
+import { NgxBraintreeModule } from 'ngx-braintree';
+import { environment } from 'src/environments/environment';
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -84,6 +83,7 @@ const myroutes: Routes = [
   {path:'typeahead',component:TypeaheadComponent},
   {path:'socialLogin',component:SocialLoginsComponent},
   {path:'mouseMove',component:MouseMoveComponent},
+  {path:'brainTree',component:BraintreeComponent},
 ]
 @NgModule({
   declarations: [
@@ -107,8 +107,8 @@ const myroutes: Routes = [
     FoodAppComponent,
     TypeaheadComponent,
     SocialLoginsComponent,
-    MouseMoveComponent
-    
+    MouseMoveComponent,
+    BraintreeComponent 
   ],
   imports: [
     BrowserModule,
@@ -127,7 +127,7 @@ const myroutes: Routes = [
     MatDialogModule,
     AuthModule.forRoot({
       domain: 'dev-7l6sprbd.us.auth0.com',
-      clientId: 'tEJ2McEd9i2t2TxYAXhNpvYdrClrExK2'
+      clientId: environment.auth0ID
     }),
     ReactiveFormsModule,
     MatDatepickerModule,
@@ -152,7 +152,8 @@ const myroutes: Routes = [
       YouTubePlayerModule,
       MatAutocompleteModule,
      SocialLoginModule,
-     GoogleMapsModule
+     GoogleMapsModule,
+     NgxBraintreeModule 
   ],
   providers: [
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
@@ -163,13 +164,11 @@ const myroutes: Routes = [
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '234384099147-tt54amdladqdgc5ifrhtg2ekqm9eglvh.apps.googleusercontent.com'
-            ),
+            provider: new GoogleLoginProvider(environment.googleKEY),
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('1075646596221428'),
+            provider: new FacebookLoginProvider(environment.facebookKEY),
           },
         ],
       } as SocialAuthServiceConfig,
