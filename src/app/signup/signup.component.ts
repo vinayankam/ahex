@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   userList: Array<any> = [];
   name: string;
-  password: any;
+  password: string;
   gender: string;
   selectedValue: string;
   Country:  Array<any> = [

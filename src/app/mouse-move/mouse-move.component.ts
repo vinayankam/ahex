@@ -6,10 +6,9 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./mouse-move.component.css']
 })
 export class MouseMoveComponent implements OnInit {
-  queryselector:any
-  top:any;
-  left:any;
-  expand=false;
+  top:string;
+  left:string;
+  expand: boolean;
   constructor() { }
 
   ngOnInit(): void {
@@ -28,5 +27,4 @@ export class MouseMoveComponent implements OnInit {
     this.top=($event.pageY - 10)+ "px";
     this.left= ($event.pageX - 10)+ "px";
   }
-
 }

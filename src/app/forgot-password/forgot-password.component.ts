@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
 })
 export class ForgotPasswordComponent implements OnInit {
   name: string;
-  password: any;
-  rePassword: any;
+  password: string;
+  rePassword: string;
   viewName: string;
   userList: any = [];
   error: boolean;
-  knownPassward: any ='';
+  knownPassward: string ='';
   knowChange: boolean;
   forgotChange: boolean;
   knowError: boolean = false;

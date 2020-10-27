@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class dataTransferservice {
   constructor(public http: HttpClient) { }
   private data = new BehaviorSubject<any>('');
-  private password : number;
+  private password : string;
   public correct : boolean;
 
   //youtube videos
