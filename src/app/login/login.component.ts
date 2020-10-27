@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  name: any;
+  name: string;
   password: any;
-  userList: any = [];
+  userList: Array<any> = [];
   error: boolean;
   constructor(public router:Router) { }
 

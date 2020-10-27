@@ -11,7 +11,7 @@ import {MatPaginator} from '@angular/material/paginator';
 })
 
 export class ChildDataComponent implements OnInit {
-  @Input() parentData: any=[];
+  @Input() parentData: Array<any>=[];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   refresh: boolean;

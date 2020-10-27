@@ -8,7 +8,7 @@ export class FoodAppComponent implements OnInit {
   view:boolean = false;
   myRestaurant: string;
   restaurantImg: string;
-  center: any = {
+  center: object = {
     lat:  17.3596 ,
     lng:  78.0889,
   }
