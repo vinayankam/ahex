@@ -15,6 +15,7 @@ export class dataTransferservice {
   private password : number;
   public correct : boolean;
 
+  //youtube videos
   getVideosForChanel(channel, maxResults): Observable<Object> {
     let api = environment.youtubeAPI;
     let url = environment.youtubeURL + 'v3/search?key=' + api + '&channelId=' + channel + '&order=date&part=snippet &type=video,id&maxResults=' + maxResults
@@ -33,6 +34,7 @@ export class dataTransferservice {
       }))
   }
 
+  //set parental data
   setData(data) {
     this.data.next(data);
   }
@@ -41,6 +43,7 @@ export class dataTransferservice {
     return this.data.asObservable(); 
   }
 
+  //checking password
   setPassword(password) {
     this.password = password;
   }
@@ -49,6 +52,7 @@ export class dataTransferservice {
     return this.password;
   }
 
+  //getting github data
   getGitApi():Observable<any> {
     const url = environment.githubURL + "search/repositories?q=topic:ruby+topic:rails";
     return this.http.get<any>(url);
