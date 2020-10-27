@@ -5,8 +5,7 @@ export interface PeriodicElement {
   gender: string;
   country: string;
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [];
+const ELEMENT_DATA: any[] = [];
 @Component({
   selector: 'app-login-sucess',
   templateUrl: './login-sucess.component.html',
@@ -23,9 +22,9 @@ export class LoginSucessComponent implements OnInit {
     this.dataSource = JSON.parse(localStorage.getItem("submitedList"));
     console.log( this.dataSource)
   }
+
+  // navigate to home component
   home() {
-    this.router.navigate([''])
-
+    this.router.navigate(['home'])
   }
-
 }

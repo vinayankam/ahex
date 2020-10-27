@@ -13,11 +13,13 @@ export class HomeComponent implements OnInit {
   constructor(public router:Router,public auth: AuthService,@Inject(DOCUMENT) public document: Document) { }
 
   ngOnInit(): void {
-    //this.auth.loginWithRedirect()
   }
+
+  // General login
   signup() {
     this.router.navigate(['signup'])
   }
+
   login() { 
     this.router.navigate(['login'])
   }
@@ -26,8 +28,8 @@ export class HomeComponent implements OnInit {
   authf() {
     this.auth.loginWithRedirect()
   }
+
   authLogout() {
     this.auth.logout({ returnTo: document.location.origin })
   }
-
 }

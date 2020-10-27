@@ -12,7 +12,6 @@ button {
     width: 163px;
     margin-left: 151px;
     margin-top: 33px;
-
 }
 
 .button { 
@@ -22,8 +21,7 @@ button {
 }
 
 h1 {
-    text-align: center;
-    
+    text-align: center;  
 }
 
 .authButton {

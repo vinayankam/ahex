@@ -1,31 +1,31 @@
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    margin: auto;
-  }
-    
-  .example-full-width {
-    width: 100%;
-  }
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
   
-  .select {
-    margin-top: 18px;
-  }
-  
-  mat-card {
-    width: 654px;
-    margin: auto;
-    position: relative;
-    height: 572px;
-    margin-top: 22PX;
-    top: 16px;
-  }
-  
-  mat-radio-button {
-    margin-left: 22px;
-  }
+.example-full-width {
+  width: 100%;
+}
 
-  .submit-button {
-    margin-top: 26px;
-  }
+.select {
+  margin-top: 18px;
+}
+
+mat-card {
+  width: 654px;
+  margin: auto;
+  position: relative;
+  height: 572px;
+  margin-top: 22PX;
+  top: 16px;
+}
+
+mat-radio-button {
+  margin-left: 22px;
+}
+
+.submit-button {
+  margin-top: 26px;
+}

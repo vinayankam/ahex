@@ -11,18 +11,18 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class YoutubeComponent implements OnInit {
   myControl = new FormControl();
-  options: any = [];
-  forLoopLIst:any;
+  options: Array<any> = [];
   filteredOptions: Observable<string[]>;
-  trendingVideos: any = [];
+  trendingVideos:  Array<any> = [];
   comments: string[] = ['Good', 'super', 'very good'];
   comment:string;
   data:any;
-  viewLink: any = 'OyofB8DhH8g';
-  searchValue:any;
-  selectedVideo:any = '';
+  viewLink: string = 'OyofB8DhH8g';
+  searchValue:string;
+  selectedVideo:string = '';
   constructor(public service: dataTransferservice,private sanitizer:DomSanitizer) { }
   ngAfterContentInit() {}
+
   ngOnInit(): void {
     this.service.getVideosForChanel('UCgq1YfP5rvJdqLBItGkHdkA',10).subscribe(data =>{
       this.data = data;
@@ -31,32 +31,30 @@ export class YoutubeComponent implements OnInit {
          a.push({link:value.id.videoId,description:value.snippet.description});
         }); 
         this.trendingVideos = a;
-        // let b =[]
-        // this.trendingVideos.forEach(function (value) {
-        //   b.push(value.description);
-        //   }); 
-        // //this.options = b
-        // // console.log(this.options)
         this.filteredOptions = this.myControl.valueChanges.pipe(
           startWith(''),
           map(value => this._filter(value))
         );
     });
   }
+
   displayFn(user) {
     return user && user.description ? user.description : '';
   }
   
+  //post any comment
   post() {
     this.comments.push(this.comment);
   }
 
-  navigate(a) {
-    this.viewLink = a
+  //to display selected video
+  navigate(link) {
+    this.viewLink = link;
   }
 
-  search(a) {
-    this.viewLink = a.link;
+  //search for videos
+  search(searchLink) {
+    this.viewLink = searchLink.link;
   }
 
   private _filter(value: any): string[] {

@@ -3,10 +3,6 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { tsFormModel } from '../forms/tdFormModel';
 
-interface country {
-  value: string;
-  viewValue: string;
-}
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
@@ -22,20 +18,18 @@ export class FormsComponent implements OnInit {
     description: ['',Validators.required],
     check: ['',Validators.required],
   });
-  countryArray: country[] = [
+  countryArray: any[] = [
     {value: 'India', viewValue: 'India'},
     {value: 'USA', viewValue: 'USA'},
     {value: 'UAE', viewValue: 'UAE'}
   ];
-  tdCountryArray = ['india', 'USA',
-  'UAE'];
+  tdCountryArray = ['india', 'USA', 'UAE'];
   model = new tsFormModel('vinay',1233344444, 'vinay55@gmail.com','male',this.tdCountryArray[1],'hii', true);
 
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
+  
   signup() {
     console.log(this.profileForm.value);
   }
@@ -43,5 +37,4 @@ export class FormsComponent implements OnInit {
   tdSignup() {
     console.log({name:this.model.tdName,number:this.model.tdNumber,email:this.model.tdEmail,gender:this.model.tdGender,country:this.model.tdSelectedValue,description:this.model.tdDescription,checked:this.model.tdCheck})
   }
-
 }

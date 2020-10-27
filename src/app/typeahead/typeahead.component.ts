@@ -11,16 +11,14 @@ import {map, startWith} from 'rxjs/operators';
 export class TypeaheadComponent implements OnInit {
   myControl = new FormControl();
   myControlUser = new FormControl();
-  options: any = [];
-  optionsUser: any = [];
-  forLoopLIst:any;
+  options: Array<any> = [];
+  optionsUser: Array<any> = [];
   filteredOptions: Observable<string[]>;
   filteredOptionsUser: Observable<string[]>;
-  load: any;
-  namesArray: any = [];
-  data:any
-  userData:any;
-  loading:boolean = true;
+  load: boolean;
+  data: any;
+  userData: any;
+  loading: boolean = true;
   constructor(private gitService:dataTransferservice) { }
 
   ngOnInit(): void {
@@ -46,7 +44,6 @@ export class TypeaheadComponent implements OnInit {
     setTimeout(() => {
       this.loading = false;
     }, 5000);
-
     this.gitService.getGitApiUser().subscribe((data) => {
       this.userData = data;
     })

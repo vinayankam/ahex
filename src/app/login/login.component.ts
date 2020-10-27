@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.userList = JSON.parse(localStorage.getItem("submitedList"));
   }
+
   login() {
     this.userList.forEach(user => {
       if(user.name == this.name && user.password == this.password) {
@@ -27,10 +28,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  // navigate to home component
   home() {
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
   }
 
+  // navigate to forgotPassword component
   forgot() {
     this.router.navigate(['forgotPassword']);
   }

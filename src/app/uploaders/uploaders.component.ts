@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-// import { FileQueueObject, ImageUploaderOptions } from 'ngx-image-uploader';
 
 @Component({
   selector: 'app-uploaders',
@@ -11,15 +10,14 @@ export class UploadersComponent implements OnInit {
     element:HTMLElement;
     activateState: string;
     urls = [];
-    filesArray : any;
-    localPDF: any;
-    pdfFile;
-    pdfSrc;
+    filesArray : string;
+    localPDF: string;
+    pdfFile: string;
+    pdfSrc: string;
     pdfBufferRender;
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit(): void {
-        // console.log(this.route.snapshot.routeConfig.path)
         if(this.route.snapshot.routeConfig.path.includes('img')){
         this.activateState = 'img'
         }else{
@@ -27,6 +25,7 @@ export class UploadersComponent implements OnInit {
         }
     }
 
+    //select multi files
     onSelectFile(event) {
         if (event.target.files && event.target.files[0]) {
             var filesAmount = event.target.files.length;
@@ -45,6 +44,7 @@ export class UploadersComponent implements OnInit {
         }
     }
 
+    //select PDF
     pdfOnload(event) {
         const pdfTatget: any = event.target;
         console.log( event.target.files[0].size)

@@ -6,12 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./git-api.component.css']
 })
 export class GitApiComponent implements OnInit {
-userName: string = "vinayankam";
+  userName: string = "vinayankam";
   constructor() { }
 
-  ngOnInit(): void {
-    // this.requestUserRepos('vinayankam');
-  }
+  ngOnInit(): void {}
+
   requestUserRepos(username){
     console.log(username)
     try {
@@ -19,13 +18,13 @@ userName: string = "vinayankam";
     const url = `https://api.github.com/users/${username}/repos`;
     xhr.open('GET', url, true);
     xhr.onload = function() {
-        const data = JSON.parse(this.response);
-        console.log(data); 
+      const data = JSON.parse(this.response);
+      console.log(data); 
     }
     xhr.send();
     }
     catch (exception) {
-        console.log(exception)
+      console.log(exception)
     }
   }
 }

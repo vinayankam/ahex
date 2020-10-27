@@ -7,35 +7,39 @@ import { Router } from '@angular/router';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
-  name: any;
+  name: string;
   password: any;
   rePassword: any;
-  viewName: any;
+  viewName: string;
   userList: any = [];
   error: boolean;
   knownPassward: any ='';
-  knowChange: boolean = false;
-  forgotChange: boolean = false;
- 
+  knowChange: boolean;
+  forgotChange: boolean;
   knowError: boolean = false;
+  
   constructor(public router:Router) { }
 
   ngOnInit(): void {
     this.userList = JSON.parse(localStorage.getItem("submitedList"));
-
   }
+
   home() {
     this.router.navigate([''])
   }
+
   forgot() {
     this.knowChange = true;
     this.forgotChange = false;
   }
+
+  // To reser the password
   reset() {
     this.forgotChange = true;
     this.knowChange = false;
-
   }
+
+  // To know your password
   know() {
     this.knownPassward = "";
     this.knowError = false;
@@ -45,10 +49,11 @@ export class ForgotPasswordComponent implements OnInit {
       }
     });
     if(this.knownPassward == '') {
-    this.knowError = true;
-      
+    this.knowError = true; 
     }
   }
+
+  // To login your account
   login() {
     this.userList.forEach(user => {
       if(user.name == this.name) {

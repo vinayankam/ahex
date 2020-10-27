@@ -13,6 +13,6 @@ export class MultiLanguageComponent  {
   }
  
   switchLanguage(language: string) {
-  this.translateService.use(language);
-}
+    this.translateService.use(language);
+  }
 }
