@@ -12,7 +12,7 @@ export class DatepickerComponent implements OnInit {
   datepicker: Date;
   selected: Date;
   date: Date;
-  formateList: any[] = [
+  formateList: Array<any> = [
     {value: 'CST', viewValue: 'CST'},
     {value: 'MST', viewValue: 'MST'},
     {value: 'PST', viewValue: 'PST'},

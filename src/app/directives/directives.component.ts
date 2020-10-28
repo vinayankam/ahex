@@ -10,9 +10,9 @@ import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
   styleUrls: ['./directives.component.css']
 })
 export class DirectivesComponent implements OnInit {
-  password: any;
-  conform:any;
-  isLoading = true;
+  password: string;
+  conform: string;
+  isLoading:boolean = true;
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'indeterminate';
   loaderSize: number = 75;
@@ -28,6 +28,7 @@ export class DirectivesComponent implements OnInit {
     }
   }
 
+  //To change the size of loader
   ChangeSize(size) {
     this.refreshLoader = false;
     setTimeout(() => {
@@ -36,14 +37,17 @@ export class DirectivesComponent implements OnInit {
     }, 100);
   }
 
+  //alert message if it sucess
   submit() {
     alert("sucess")
   }
 
+  //To set password in service
   setGivenPassword(password){
     this.service.setPassword(password)
   }
 
+  //to disable button
   ValidatePassword(){
     if(this.service.correct == true){
       return false;
