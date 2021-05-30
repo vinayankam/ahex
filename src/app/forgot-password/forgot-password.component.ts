@@ -49,7 +49,8 @@ export class ForgotPasswordComponent implements OnInit {
       }
     });
     if(this.knownPassward == '') {
-    this.knowError = true; 
+      
+      this.knowError = true; 
     }
   }
 

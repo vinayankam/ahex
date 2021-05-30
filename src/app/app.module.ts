@@ -59,6 +59,7 @@ import { MouseMoveComponent } from './mouse-move/mouse-move.component';
 import { BraintreeComponent } from './braintree/braintree.component';
 import { NgxBraintreeModule } from 'ngx-braintree';
 import { environment } from 'src/environments/environment';
+import { NotesComponent } from './notes/notes.component';
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -84,6 +85,7 @@ const myroutes: Routes = [
   {path:'socialLogin',component:SocialLoginsComponent},
   {path:'mouseMove',component:MouseMoveComponent},
   {path:'brainTree',component:BraintreeComponent},
+  {path:'notes',component:NotesComponent},
 ]
 @NgModule({
   declarations: [
@@ -108,7 +110,8 @@ const myroutes: Routes = [
     TypeaheadComponent,
     SocialLoginsComponent,
     MouseMoveComponent,
-    BraintreeComponent 
+    BraintreeComponent,
+    NotesComponent 
   ],
   imports: [
     BrowserModule,

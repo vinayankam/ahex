@@ -24,7 +24,7 @@ export class FormsComponent implements OnInit {
     {value: 'UAE', viewValue: 'UAE'}
   ];
   tdCountryArray = ['india', 'USA', 'UAE'];
-  model = new tsFormModel('vinay',1233344444, 'vinay55@gmail.com','male',this.tdCountryArray[1],'hii', true);
+  model = new tsFormModel('',1233344444, 'vinay55@gmail.com','male',this.tdCountryArray[1],'hii', true);
 
   constructor(private fb: FormBuilder) { }
 

@@ -77,4 +77,8 @@ export class AppComponent {
   brainTree() {
     this.router.navigate(['brainTree']);
   }
+  
+  notes() {
+    this.router.navigate(['notes']);
+  }
 }
